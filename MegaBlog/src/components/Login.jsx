@@ -5,7 +5,7 @@ import {Logo,Input,Button} from "./index"
 import { useDispatch } from 'react-redux'
 import authService  from '../appwrite/auth'
 import {useForm} from "react-hook-form"
-
+import Input from "../components/Input"
 function Login() {
     const navigate=useNavigate()
     const dispatch=useDispatch()
@@ -43,9 +43,27 @@ function Login() {
                     </Link>
         </p>
         {error && <p className='text-red-500 text-center'>{error}</p>}
+        <form onSubmit={handleSubmit(login)} className='mt-8'>
+            <div className='space-y-5'>
+            <Input
+                label="Email: "
+                placeholder="Enter your email"
+                type="email"
+                {...register("email", {
+                    required: true,
+                    validate: {
+                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address",
+                    }
+                })}
+                />
+            </div>
+        </form>
         
     </div>
   )
 }
 
 export default Login
+
+

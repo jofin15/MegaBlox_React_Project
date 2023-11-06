@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import authService  from '../appwrite/auth'
 import {useForm} from "react-hook-form"
 import Input from "../components/Input"
+
 function Login() {
     const navigate=useNavigate()
     const dispatch=useDispatch()

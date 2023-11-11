@@ -9,6 +9,7 @@ import Select from "../components/Select"
 import RTE from "./RTE";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import PostCard from "./PostCard";
+import AuthLayout from "./AuthLayout"
 
-
-export {Header,Login,Footer,Container,Logo,LogoutBtn,Input,Button,RTE,Select,SignUp} 
+export {Header,AuthLayout,PostCard,Login,Footer,Container,Logo,LogoutBtn,Input,Button,RTE,Select,SignUp} 
